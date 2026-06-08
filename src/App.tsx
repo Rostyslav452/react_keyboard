@@ -3,11 +3,11 @@ import React from 'react';
 interface Props {}
 export class App extends React.Component<Props> {
   state = {
-    key: '',
+    pressedKey: '',
   };
 
-  keyEventListener = (event: KeyboardEvent) => {
-    this.setState({ key: event.key });
+  handleKeyUp = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
   };
 
   componentDidMount() {
@@ -22,8 +22,8 @@ export class App extends React.Component<Props> {
     return (
       <div className="App">
         <p className="App__message">
-          {this.state.key !== ''
-            ? `The last pressed key is [${this.state.key}]`
+          {this.state.pressedKey !== ''
+            ? `The last pressed pressedKey is ${this.state.pressedKey}`
             : `Nothing was pressed yet`}
         </p>
       </div>
