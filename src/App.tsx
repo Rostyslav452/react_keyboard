@@ -11,11 +11,11 @@ export class App extends React.Component<Props> {
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.keyEventListener);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.keyEventListener);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render(): React.ReactNode {
